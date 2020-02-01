@@ -1,0 +1,45 @@
+/*
+Helper styles to make menu buttons look like router links
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+:host {
+	font-family: 'Roboto', sans-serif;
+}
+:host(.menu-button) .vaadin-button-container {
+	justify-content: left;
+}
+
+:host(.menu-button) {
+	cursor: pointer;
+}
+
+[part] ::slotted(iron-icon[icon^="vaadin:"]) {
+	padding: 0;
+}
+.vaadin-text-field-container [part="label"] {
+	font-size: 17px;
+	color: #1676f3;
+	font-weight: 600;
+}
+
+@media (min-width: 800px) {
+	[part="navbar"] {
+		display: none!important;
+	}
+}
+@media (max-width: 800px) {
+	.vaadin-button-container [part="label"] {
+		font-size: 13px;
+		white-space: initial;
+		text-align: left;
+		padding-left: 10px;
+	}
+}
+
+/* print styles */
+@media print {
+	[part="drawer"],  [part="navbar"] {
+		display: none!important;
+	}
+}
